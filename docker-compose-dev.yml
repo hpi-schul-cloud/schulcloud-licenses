@@ -1,0 +1,35 @@
+version: '3'
+
+services:
+
+  schulcloud-licenses:
+    image: schulcloud-licenses:latest
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      NODE_ENV: development
+    ports:
+      - 5050:5050
+      - 5051:5051
+    networks:
+      - network-schulcloud-licenses
+    volumes:
+      - .:/app
+    command: npm run dev
+
+  schulcloud-licenses-mongodb:
+    image: mongo:4.0.6
+    networks:
+      - network-schulcloud-licenses
+    volumes:
+      - data-schulcloud-licenses:/data/db
+      - .:/app
+    ports:
+      - 27017:27017
+
+networks:
+  network-schulcloud-licenses:
+
+volumes:
+  data-schulcloud-licenses:
