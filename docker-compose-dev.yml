@@ -21,7 +21,9 @@ services:
   schulcloud-licenses-mongodb:
     image: mongo:4.0.6
     networks:
-      - network-schulcloud-licenses
+      network-schulcloud-licenses:
+        aliases:
+          - mongodb
     volumes:
       - data-schulcloud-licenses:/data/db
       - .:/app

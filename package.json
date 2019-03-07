@@ -35,7 +35,10 @@
     "@feathersjs/feathers": "^3.3.1",
     "compression": "^1.7.3",
     "cors": "^2.8.5",
+    "feathers-mongoose": "^7.3.2",
     "helmet": "^3.15.1",
+    "mongodb-core": "^3.1.11",
+    "mongoose": "^5.4.17",
     "serve-favicon": "^2.5.0",
     "winston": "^3.2.1"
   },
