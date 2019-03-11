@@ -1,11 +1,11 @@
-
+const validateLicensesSchema = require('../../hooks/validate-licenses-schema/');
 
 module.exports = {
   before: {
     all: [],
     find: [],
     get: [],
-    create: [],
+    create: [validateLicensesSchema()],
     update: [],
     patch: [],
     remove: []
