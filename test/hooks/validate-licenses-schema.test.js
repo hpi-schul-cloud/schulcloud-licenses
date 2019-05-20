@@ -23,7 +23,8 @@ describe('\'validate-odrl-licenses-schema\' hook', () => {
 
   it('permits a license with a complex content object', async () => {
     const license = {
-      'content': {
+      'name': 'test-license',
+      'odrl': {
         'type-of-license': 'more complex license',
         'permissions': [
           {'kind': 'permissionKind1', 'valid': true},

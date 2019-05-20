@@ -12,5 +12,5 @@
         "type": "object"
       }
     },
-    "required": ["content"]
+    "required": ["name", "odrl"]
   }
