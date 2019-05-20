@@ -1,20 +1,20 @@
 const assert = require('assert');
 const feathers = require('@feathersjs/feathers');
-const validateLicensesSchema = require('../../src/hooks/validate-licenses-schema');
+const validateLicensesSchema = require('../../src/hooks/validate-odrl-licenses-schema');
 
-describe('\'validate-licenses-schema\' hook', () => {
+describe('\'validate-odrl-licenses-schema\' hook', () => {
   let app;
 
   beforeEach(() => {
     app = feathers();
 
-    app.use('/licenses', {
+    app.use('/odrl-licenses', {
       async create(data) {
         return data;
       }
     });
 
-    app.service('licenses').hooks({
+    app.service('odrl-licenses').hooks({
       before: {
         create: validateLicensesSchema()
       }
@@ -32,7 +32,7 @@ describe('\'validate-licenses-schema\' hook', () => {
         'party': { 'kind': 'Person', 'name': 'Some Genius'}
       }
     };
-    const result = await app.service('licenses').create(license);
+    const result = await app.service('odrl-licenses').create(license);
 
     assert.deepEqual(result, license);
   });
@@ -44,7 +44,7 @@ describe('\'validate-licenses-schema\' hook', () => {
     };
     try {
       // provoke BadRequest error
-      await app.service('licenses').create(license);
+      await app.service('odrl-licenses').create(license);
     } catch(e) {
       assert.ok(e);
       return;

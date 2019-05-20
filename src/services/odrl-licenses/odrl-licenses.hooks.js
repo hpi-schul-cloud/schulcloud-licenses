@@ -1,4 +1,4 @@
-const validateLicensesSchema = require('../../hooks/validate-licenses-schema/');
+const validateLicensesSchema = require('../../hooks/validate-odrl-licenses-schema');
 
 module.exports = {
   before: {

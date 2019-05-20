@@ -1,6 +1,6 @@
 const commonHooks = require('feathers-hooks-common');
 const Ajv         = require('ajv');
-const Schema      = require('./licenses-schema.json');
+const Schema      = require('./odrl-licenses-schema.json');
 
 const ajv     = new Ajv({allErrors: true});
 
