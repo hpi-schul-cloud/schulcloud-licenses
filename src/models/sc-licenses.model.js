@@ -7,7 +7,8 @@ module.exports = function (app) {
   const { Schema } = mongooseClient;
   const scLicenses = new Schema({
     name: { type: String, required: true },
-    policies: { type: Array, required: true },
+    odrl: { type: Object, required: true },
+    options: { type: Object, required: true },
   }, {
     timestamps: true
   });

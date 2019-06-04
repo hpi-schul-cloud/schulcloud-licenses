@@ -7,10 +7,14 @@
         "description": "The name of the license",
         "type": "string"
       },
-      "policies": {
-        "description": "The forms of the license as wrapped odrl policies",
-        "type": "array"
+      "odrl": {
+        "description": "The content of the license as odrl policy",
+        "type": "object"
+      },
+      "options": {
+        "description": "The options to select from when forming an agreement",
+        "type": "object"
       }
     },
-    "required": ["name", "policies"]
+    "required": ["name", "odrl", "options"]
   }
